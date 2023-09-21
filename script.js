@@ -1,5 +1,6 @@
+// Attributes that alter how the password will be
 var length;
-var password = "";
+var finalPassword = "";
 var builtPassword = "";
 var numbers = "1234567890"
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"
@@ -14,7 +15,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = finalPassword;
 
 }
 
@@ -22,51 +23,63 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
+  // Choose length of password, then assign length that user chooses.
     var lengthChoice = prompt("Please pick the length of your password. Must be at least 8 characters and no more than 128 characters");
     console.log(lengthChoice);
     length = lengthChoice;
+
+// Alert if user does not choose appropriate length.
 
     if(lengthChoice < 8 || lengthChoice > 128 || isNaN(lengthChoice)) {
         alert("Please choose a NUMBER that is at least 8 characters and no more than 128 characters.");
     }
 
-var lowerCaseChoice = confirm("Would you like your password to contain lower case letters?");
 
-if (lowerCaseChoice) {
-  builtPassword += lowerCase[Math.floor(Math.random() * lowerCase.length)];
-}
+// Confirmations for user to choose from.
+var lowerCaseChoice = confirm("Would you like your password to contain lower case letters?");
 
 var upperCaseChoice = confirm("Would you like your password to contain upper case letters?");
 
-if (upperCaseChoice) {
-  builtPassword += upperCase[Math.floor(Math.random() * upperCase.length)];
-}
-
 var numbersChoice = confirm("Would you like your password to contain numbers?");
-
-
-if (numbersChoice) {
-  builtPassword += numbers[Math.floor(Math.random() * numbers.length)];
-}
 
 var charactersChoice = confirm("Would you like your password to contain special characters?");
 
+// Alters user password based on confirmations
+if (lowerCaseChoice) {
+  builtPassword += lowerCase;
+}
+
+if (upperCaseChoice) {
+  builtPassword += upperCase;
+}
+
+if (numbersChoice) {
+  builtPassword += numbers;
+}
+
 
 if (charactersChoice) {
-  builtPassword += specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+  builtPassword += specialCharacters;
 }
 
+// If user does not confirm any, alert will be given to choose atleast one.
+if (!charactersChoice && !numbersChoice && !upperCaseChoice
+  && !lowerCaseChoice) {
+    alert("You must confirm atleast ONE option.")
+  }
+
+// For loop to go through the length of password, assign random character to password.
 for (var i = 0; i < length; i++) {
-  var randomInput = Math.floor(Math.random() * password.length);
-  password += builtPassword;
+  var randomInput = Math.floor(Math.random() * builtPassword.length);
+  finalPassword = finalPassword + builtPassword[randomInput];
 }
 
-alert("Your password is: " + builtPassword);
+alert("Your password is: " + finalPassword);
 
-var newPassword = confirm("DO you want a new password?");
+// If user wants to generate a new password
+var newPassword = confirm("Do you want a new password?");
 if (newPassword) {
     generatePassword();
 }
 }
 
-generatePassword();
