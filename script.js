@@ -1,6 +1,5 @@
 // Attributes that alter how the password will be
 var length;
-var finalPassword = "";
 var builtPassword = "";
 var numbers = "1234567890"
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"
@@ -15,7 +14,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = finalPassword;
+  passwordText.value = password;
 
 }
 
@@ -23,6 +22,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
+  var finalPassword = "";
+
   // Choose length of password, then assign length that user chooses.
     var lengthChoice = prompt("Please pick the length of your password. Must be at least 8 characters and no more than 128 characters");
     console.log(lengthChoice);
@@ -73,13 +74,7 @@ for (var i = 0; i < length; i++) {
   var randomInput = Math.floor(Math.random() * builtPassword.length);
   finalPassword = finalPassword + builtPassword[randomInput];
 }
+return finalPassword;
 
-alert("Your password is: " + finalPassword);
-
-// If user wants to generate a new password
-var newPassword = confirm("Do you want a new password?");
-if (newPassword) {
-    generatePassword();
-}
 }
 
