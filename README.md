@@ -27,6 +27,9 @@ THEN the password is either displayed in an alert or written to the page
 
 https://tamirp123.github.io/module-3-challenge/
 
+#### Photo of application
+![]((images\projectImage.png))
+
 https://github.com/TamirP123/module-3-challenge
 
 #### Photo of app
