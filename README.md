@@ -1,6 +1,12 @@
-## Acceptance Criteria
+# Project Information
+In this challenge I created a website that allows you the user to generate
+their own unique random password by clicking a generate button. This challenge
+gives the option of choosing a length of 8 through 128 characters, lower case,
+upper case, numbers, or even special characters. The user is given an error
+if none of the options are picked, or if their length is not 8 through 128
+characters.
 
-```
+## Acceptance Criteria
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
@@ -16,3 +22,11 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+### Live website and repo
+
+https://tamirp123.github.io/UofM-Module-2-Challenge/
+
+https://github.com/TamirP123/UofM-Module-2-Challenge
+
+#### Photo of app

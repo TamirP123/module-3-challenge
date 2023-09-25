@@ -33,6 +33,7 @@ function generatePassword() {
 
     if(lengthChoice < 8 || lengthChoice > 128 || isNaN(lengthChoice)) {
         alert("Please choose a NUMBER that is at least 8 characters and no more than 128 characters.");
+        return;
     }
 
 
@@ -67,6 +68,7 @@ if (charactersChoice) {
 if (!charactersChoice && !numbersChoice && !upperCaseChoice
   && !lowerCaseChoice) {
     alert("You must confirm atleast ONE option.")
+    return;
   }
 
 // For loop to go through the length of password, assign random character to password.
