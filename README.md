@@ -30,3 +30,5 @@ https://tamirp123.github.io/module-3-challenge/
 https://github.com/TamirP123/module-3-challenge
 
 #### Photo of app
+
+![Project Image](images\projectImage.png)
