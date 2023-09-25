@@ -25,8 +25,8 @@ THEN the password is either displayed in an alert or written to the page
 
 ### Live website and repo
 
-https://tamirp123.github.io/UofM-Module-2-Challenge/
+https://tamirp123.github.io/module-3-challenge/
 
-https://github.com/TamirP123/UofM-Module-2-Challenge
+https://github.com/TamirP123/module-3-challenge
 
 #### Photo of app
